@@ -17,15 +17,18 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(410, 416)
-        MainWindow.setStyleSheet(u"background-color: rgb(237, 246, 255);")
+        MainWindow.resize(268, 276)
+        MainWindow.setMinimumSize(QSize(268, 276))
+        MainWindow.setMaximumSize(QSize(268, 276))
+        MainWindow.setAcceptDrops(True)
+        MainWindow.setStyleSheet(u"background-color: rgb(222, 225, 228);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
-        self.frame.setMaximumSize(QSize(16777215, 16777215))
+        self.frame.setMaximumSize(QSize(268, 276))
         self.frame.setStyleSheet(u"")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
@@ -37,7 +40,7 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setFamily(u"Franklin Gothic Book")
         self.label.setFont(font)
-        self.label.setStyleSheet(u"background-color: rgb(237, 246, 255);")
+        self.label.setStyleSheet(u"background-color: rgb(222, 225, 228);")
 
         self.verticalLayout.addWidget(self.label)
 
@@ -46,6 +49,10 @@ class Ui_MainWindow(object):
         self.txt_path = QLineEdit(self.frame)
         self.txt_path.setObjectName(u"txt_path")
         self.txt_path.setMaximumSize(QSize(16777215, 25))
+        self.txt_path.setCursor(QCursor(Qt.IBeamCursor))
+        self.txt_path.setMouseTracking(True)
+        self.txt_path.setTabletTracking(False)
+        self.txt_path.setAcceptDrops(True)
         self.txt_path.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.txt_path.setAlignment(Qt.AlignCenter)
 
@@ -55,7 +62,7 @@ class Ui_MainWindow(object):
         self.btn_open.setObjectName(u"btn_open")
         self.btn_open.setMaximumSize(QSize(16777215, 25))
         self.btn_open.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_open.setStyleSheet(u"background-color: rgb(207, 224, 255);")
+        self.btn_open.setStyleSheet(u"background-color: rgb(241, 150, 22);")
 
         self.horizontalLayout_2.addWidget(self.btn_open)
 
@@ -72,7 +79,7 @@ class Ui_MainWindow(object):
         self.btn_organize = QPushButton(self.frame)
         self.btn_organize.setObjectName(u"btn_organize")
         self.btn_organize.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_organize.setStyleSheet(u"background-color: rgb(207, 224, 255);")
+        self.btn_organize.setStyleSheet(u"background-color: rgb(241, 150, 22);")
 
         self.horizontalLayout.addWidget(self.btn_organize)
 
@@ -96,7 +103,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\"_imgs/icone2.png\"/></p><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">ORGANIZADORZINHO</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\"_imgs/icone2.png\"/></p></body></html>", None))
+#if QT_CONFIG(tooltip)
+        self.txt_path.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Selecione a pasta</p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.txt_path.setText("")
         self.txt_path.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Selecione a pasta", None))
         self.btn_open.setText(QCoreApplication.translate("MainWindow", u"Abrir", None))
         self.label_2.setText("")

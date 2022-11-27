@@ -10,8 +10,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
-        self.setWindowTitle("File Organizer")
-        appIcon = QIcon("_imgs/icone2.gif")
+        self.setWindowTitle("ORGANIZADOR")
+        appIcon = QIcon("_imgs/icone1.png")
         self.setWindowIcon(appIcon)
 
         self.file = ''
